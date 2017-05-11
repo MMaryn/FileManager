@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>file List</h1>
+        <input type="file" class="btn file" multiple webkitdirectory id="fileURL" />
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody id="output">
+
+            </tbody>
+        </table>
+    </div>
+
+    <nav id="context-menu" class="context-menu">
+        <ul class="context-menu__items">
+
+            <li class="context-menu__item">
+                <span id="add" href="#" class="context-menu__link" data-action="Add">
+                    <i class="fa fa-eye"></i>Add New File
+                </span>
+            </li>
+
+            <li class="context-menu__item">
+                <span id="rename" href="#" class="context-menu__link" data-action="Edit">
+                    <i class="fa fa-edit"></i>Rename 
+                </span>
+            </li>
+
+            <li class="context-menu__item">
+                <span id="delete" href="#" class="context-menu__link" data-action="Delete">
+                    <i class="fa fa-close"></i>Delete
+                </span>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="tip"></div>
+
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/menu.js"></script>
+</body>
+
+</html>

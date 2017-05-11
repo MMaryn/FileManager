@@ -1,0 +1,204 @@
+    /***************************************************************************************************
+   =========================================================================================== 
+                        Style for whole page
+   ============================================================================================ 
+**************************************************************************************************/
+    
+    *, *::after, *::before {
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: #FFFAD5;
+        color: #BD4932;
+        font-family: 'Raleway';
+        font-size: 62.5%;
+        -webkit-user-select: none;
+        /* Chrome all / Safari all */
+        -moz-user-select: none;
+        /* Firefox all */
+        -ms-user-select: none;
+    }
+    
+    #container {
+        margin: auto;
+        max-width: 1024px;
+    }
+    
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+    }
+    /***************************************************************************************************
+   =========================================================================================== 
+                        Style for Main Content table
+   ============================================================================================ 
+**************************************************************************************************/
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    .table {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .table > thead > tr>th {
+        padding-top: 15px;
+        border-bottom: 2px solid #BD4932;
+    }
+    
+    .table> tbody>tr:hover {
+        background-color: rgba(255, 12, 0, .5);
+    }
+    
+    .table > tbody > tr> td {
+        padding: 8px;
+        border-top: 1px solid #BD4932;
+        color: #000;
+        font-size: 2em;
+    }
+    
+    .btn {
+        padding: 10px;
+        background: #BD4932;
+        color: #FFFAD5;
+        border: 0;
+        font-family: 'Raleway';
+        border: 1px solid #BD4932;
+        transition: background ease-in-out .5s;
+    }
+    
+    .btn:hover {
+        background: #FFFAD5;
+        border: 1px solid #BD4932;
+        color: #BD4932;
+        cursor: pointer;
+    }
+    
+    .file {
+        padding: 7px 0;
+        padding-left: 10px;
+    }
+    
+    .active {
+        background: #FFFAD5;
+        border: 1px solid #BD4932;
+        color: #BD4932;
+        cursor: pointer;
+    }
+    /***************************************************************************************************
+   =========================================================================================== 
+                        Style for Menu
+   ============================================================================================ 
+**************************************************************************************************/
+    
+    .context-menu {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        font-size: 1.5em;
+    }
+    
+    .context-menu--active {
+        display: block;
+    }
+    
+    .context-menu {
+        display: none;
+        position: absolute;
+        z-index: 10;
+        padding: 12px 0;
+        width: 240px;
+        background-color: #fff;
+        border: solid 1px #dfdfdf;
+        box-shadow: 1px 1px 2px #cfcfcf;
+    }
+    
+    .context-menu--active {
+        display: block;
+    }
+    
+    .context-menu__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .context-menu__item {
+        display: block;
+        margin-bottom: 4px;
+    }
+    
+    .context-menu__item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .context-menu__link {
+        display: block;
+        padding: 14px 12px;
+        color: #000;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .context-menu__link .fa {
+        margin-right: 10px;
+    }
+    
+    .context-menu__link:hover {
+        color: #fff;
+        background-color: #BD4932;
+    }
+    /***************************************************************************************************
+   =========================================================================================== 
+                        Style for SnackBar
+   ============================================================================================ 
+**************************************************************************************************/
+    
+    #tip {
+        visibility: hidden;
+        position: fixed;
+        top: 25px;
+        left: 50%;
+        height: auto;
+        transform: translate(-50%, 0);
+        background: rgba(0, 0, 0, .9);
+        padding: 40px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #BD4932;
+    }
+    
+    #tip.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+        from {
+            top: 0;
+            opacity: 0;
+        }
+        to {
+            top: 30px;
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes fadeout {
+        from {
+            top: 30px;
+            opacity: 1;
+        }
+        to {
+            top: 0;
+            opacity: 0;
+        }
+    }
