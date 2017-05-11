@@ -58,7 +58,7 @@ var App = (function () {
             Main.data.map(files => {
                 let tr = document.createElement('tr');
                 tr.setAttribute("id", "" + files.id + "");
-                let parseName = files.name;
+                let parseName = Main.utility.parseName(files.name);
                 let parseSize = Main.utility.parseSize(files.size);
 
                 let fileName = document.createElement('td'); // NAme element
@@ -87,7 +87,6 @@ var App = (function () {
             Function: Deletes a file
         -----*/
         deleteFile: function (el) {
-            el.className.add("");
             let i = 0;
             Main.data.find(element => {
                 if (element.id == el) {
@@ -152,7 +151,6 @@ var App = (function () {
 
             store.setItem("newFiles", JSON.stringify(Main.data));
             Main.getAllFiles();
-            console.log(el);
         },
 
         utility: {
@@ -194,6 +192,12 @@ var App = (function () {
                 else {
                     console.log("ass");
                 }
+            },
+
+            parseName: name => {
+                let a;
+                name.length > 12 ? a = `${name.slice(0, 12)}...` : a = name;
+                return a;
             }
         }
     }

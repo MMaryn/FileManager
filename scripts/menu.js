@@ -57,10 +57,6 @@ let Menu = (function (App) {
     //////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////
 
-    /**
-     * letiables.
-     */
-
     let menuActions = {};
 
     let contextMenuClassName = "context-menu";
@@ -104,7 +100,8 @@ let Menu = (function (App) {
             fileItemInContext = clickInsideElement(e, fileItemClassName);
             if (fileItemInContext) {
                 e.preventDefault();
-                toggleMenuOn();
+                if (e.movementX > toggleMenuOn() || e.movementY)
+                    toggleMenuOn();
                 positionMenu(e);
             } else {
                 fileItemInContext = null;
@@ -117,15 +114,17 @@ let Menu = (function (App) {
      * Listens for click events.
      */
     function clickListener() {
-        let deleteBtn = document.getElementById("delete");
-        deleteBtn.addEventListener("click", menuActions.deleteElement, false);
 
-        let addBtn = document.getElementById("add");
-        addBtn.addEventListener("click", menuActions.addElement, false);
+        bindAction("delete", "click", menuActions.deleteElement);
+        bindAction("add", "click", menuActions.addElement);
+        bindAction("rename", "click", menuActions.renameElement);
 
-        let renameBtn = document.getElementById("rename");
-        renameBtn.addEventListener("click", menuActions.renameElement, false);
+    }
 
+    function bindAction(el, eventName, fn) {
+        let a = document.getElementById(el);
+        a.addEventListener(eventName, fn, false);
+        return;
     }
 
     /**
@@ -205,9 +204,5 @@ let Menu = (function (App) {
         toggleMenuOff();
     };
 
-
-    /**
-     * Run the app.
-     */
     init();
 })(window.App);
